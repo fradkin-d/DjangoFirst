@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Goods</title>
+{% endblock %}
+
+{% block header %}
+<header>
+    <nav class="menu">
+        /<a href="{% url 'home' %}">Home</a>/<a href="">About</a>/
+    </nav>
+</header>
+{% endblock %}
+
+{% block content %}
+<main class="content">
+<h1>Список товаров</h1>
+    <ol>
+        {% for item in items %}
+            <li><a href="{% url 'item-page' item.id %}">{{ item.name }}</a></li>
+        {% endfor %}
+    </ol>
+</main>
+{% endblock %}
